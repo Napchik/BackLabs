@@ -1,0 +1,31 @@
+.htaccess
+/config.php
+admin/config.php
+
+!index.html
+env/
+.idea/
+.o
+.pyc
+.class
+.log
+.tmp
+/bin
+/out
+/target
+/node_modules
+/packages
+download/
+image/data/
+image/cache/
+system/cache/
+system/logs/
+
+system/storage/
+
+# vQmod log files
+vqmod/logs/*
+# vQmod cache files
+vqmod/vqcache/*
+vqmod/checked.cache
+vqmod/mods.cache
