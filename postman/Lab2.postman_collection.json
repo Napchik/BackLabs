@@ -1,0 +1,1000 @@
+{
+	"info": {
+		"_postman_id": "6f3a3093-8e04-472b-9628-489850172943",
+		"name": "Lab2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31806616"
+	},
+	"item": [
+		{
+			"name": "Get_Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/categories",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"categories"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_Categories",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://{{domain}}/categories",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 14 Dec 2023 19:01:08 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8358b195c9d6c00f-WAW"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "8a2bea46-c35e-464a"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Werkzeug/2.2.3 Python/3.10.0"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"11ab12293bbf460f93a5831615ba0c56\",\n        \"name\": \"Products\"\n    },\n    {\n        \"id\": \"8c37f61c81a043ffb74872cc10bf0f8f\",\n        \"name\": \"Clothes\"\n    },\n    {\n        \"id\": \"2b952b0896044e3b965f2208f2df6657\",\n        \"name\": \"Technologies\"\n    },\n    {\n        \"id\": \"aa7931a39b4344ecb32adf730424ba79\",\n        \"name\": \"test_category\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get_Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/users",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_Users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{domain}}/users",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 14 Dec 2023 19:01:14 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8358b1bb4d81c00f-WAW"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "aa128894-120d-4f27"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Werkzeug/2.2.3 Python/3.10.0"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"c41836c11a314f5aaac749b5c2bff323\",\n        \"name\": \"Mikhail\"\n    },\n    {\n        \"id\": \"254aeaf974cf4989839227a937e20908\",\n        \"name\": \"Andriy\"\n    },\n    {\n        \"id\": \"b090ebed7c2d42c58a47cf2e5a133748\",\n        \"name\": \"Den\"\n    },\n    {\n        \"id\": \"6b5b943baede448f9449085bebc62e57\",\n        \"name\": \"David\"\n    },\n    {\n        \"id\": \"a9b66d52a30e4b299e29122767054d2e\",\n        \"name\": \"test_user\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get_Records",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{domain}}/records?category_id={{test_category_id}}&user_id={{test_user_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"records"
+					],
+					"query": [
+						{
+							"key": "category_id",
+							"value": "{{test_category_id}}"
+						},
+						{
+							"key": "user_id",
+							"value": "{{test_user_id}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_Records",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}/records?category_id={{test_category_id}}&user_id={{test_user_id}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"records"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "{{test_category_id}}"
+								},
+								{
+									"key": "user_id",
+									"value": "{{test_user_id}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 14 Dec 2023 19:01:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8358b1aa4b53c00f-WAW"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "ffcf25af-7f69-4126"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Werkzeug/2.2.3 Python/3.10.0"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"category_id\": \"aa7931a39b4344ecb32adf730424ba79\",\n        \"created\": \"2023-12-14 18:47:22.322083\",\n        \"id\": \"293a959207f9432498c2c9b1b43dd668\",\n        \"sum\": \"322\",\n        \"user_id\": \"a9b66d52a30e4b299e29122767054d2e\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create_Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test_category\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{domain}}//category",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"",
+						"category"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create_Category",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test_category\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}//category",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"",
+								"category"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 14 Dec 2023 19:32:50 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8358e0074d0fbf71-WAW"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "2aa2d375-3cb0-4b1a"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Werkzeug/2.2.3 Python/3.10.0"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"36540aeba8964506bad9e597a97e806d\",\n    \"name\": \"test_category\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create_User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test_user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{domain}}/user",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create_User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test_user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}/user",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 14 Dec 2023 19:32:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8358e02edb0dbf71-WAW"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "c95f4217-e939-460e"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Werkzeug/2.2.3 Python/3.10.0"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"8828637041b74c98b3d5a78e2713b9be\",\n    \"name\": \"test_user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create_Record",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":\"{{test_user_id}}\",\r\n    \"category_id\": \"{{test_category_id}}\",\r\n    \"sum\":\"322\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{domain}}/record",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"record"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create_Record",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"{{test_user_id}}\",\r\n    \"category_id\": \"{{test_category_id}}\",\r\n    \"sum\":\"322\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}/record",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"record"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 14 Dec 2023 19:33:46 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8358e1636f45bf71-WAW"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "c699a326-6f9d-44ad"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Werkzeug/2.2.3 Python/3.10.0"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"category_id\": \"36540aeba8964506bad9e597a97e806d\",\n    \"created\": \"2023-12-14 19:33:46.249222\",\n    \"id\": \"271426a56f9c45bc9615270e4f60a45a\",\n    \"sum\": \"322\",\n    \"user_id\": \"8828637041b74c98b3d5a78e2713b9be\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_User_byId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/user/{{test_user_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"{{test_user_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_User_byId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{domain}}/user/{{test_user_id}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"{{test_user_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 14 Dec 2023 19:01:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8358b25f891fc00f-WAW"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "71d4a4c3-df25-4ebf"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Werkzeug/2.2.3 Python/3.10.0"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"a9b66d52a30e4b299e29122767054d2e\",\n    \"name\": \"test_user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_Category_byId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/category/{{test_category_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"category",
+						"{{test_category_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_Category_byId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{domain}}/category/{{test_category_id}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"category",
+								"{{test_category_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 14 Dec 2023 19:01:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8358b26fc9e4c00f-WAW"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "61cfff18-74a2-46f4"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Werkzeug/2.2.3 Python/3.10.0"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"aa7931a39b4344ecb32adf730424ba79\",\n    \"name\": \"test_category\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_Record_byId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/record/{{test_record_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"record",
+						"{{test_record_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_Record_byId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{domain}}/record/{{test_record_id}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"record",
+								"{{test_record_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 14 Dec 2023 19:01:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8358b27df9cac00f-WAW"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "3edb0a16-023a-4686"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Werkzeug/2.2.3 Python/3.10.0"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"category_id\": \"aa7931a39b4344ecb32adf730424ba79\",\n    \"created\": \"2023-12-14 18:47:22.322083\",\n    \"id\": \"293a959207f9432498c2c9b1b43dd668\",\n    \"sum\": \"322\",\n    \"user_id\": \"a9b66d52a30e4b299e29122767054d2e\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete_User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/user/{{test_user_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"{{test_user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Record",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/record/{{test_record_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"record",
+						"{{test_record_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/category/{{test_category_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"category",
+						"{{test_category_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
