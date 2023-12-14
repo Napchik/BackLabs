@@ -6,12 +6,13 @@ https://backlabs-lab2.onrender.com/healthcheck
 
 # Postman Collection
 https://api.postman.com/collections/31806616-6f3a3093-8e04-472b-9628-489850172943?access_key=PMAT-01HHN2CP2794P3P73Y1CXF07CM
+Don't forget to aply environment (Production)
 
 # Postman Flow picture
 link: https://web.postman.co/workspace/My-Workspace~1cef47a4-2011-4e56-8164-029b7387fa4d/flow/657b59fd5cfdcd0032d99edd
 
-[postman_flow1.png](postman/postman_flow1.png)
-
+![img.png](postman/postman_flow1.png)
+[Postman Flow](postman/postman_flow1.png)
 
 # Lab2
 
