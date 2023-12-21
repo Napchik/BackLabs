@@ -2,59 +2,63 @@
 Repository for Backend Labs
 
 # Render
-https://backlabs-lab2.onrender.com/healthcheck
+https://backlabs-lab3.onrender.com/healthcheck
 
 # Postman Collection
-https://api.postman.com/collections/31806616-6f3a3093-8e04-472b-9628-489850172943?access_key=PMAT-01HHN2CP2794P3P73Y1CXF07CM
+https://api.postman.com/collections/31806616-6f0b7c97-b41f-49f1-a09d-682b4d4f9b32?access_key=PMAT-01HJ6R2G972AHJQVAJV814TC27
+
 Don't forget to aply environment (Production)
 
 # Postman Flow picture
-link: https://web.postman.co/workspace/My-Workspace~1cef47a4-2011-4e56-8164-029b7387fa4d/flow/657b59fd5cfdcd0032d99edd
+link: https://web.postman.co/workspace/My-Workspace~1cef47a4-2011-4e56-8164-029b7387fa4d/flow/65845102aa1689003d07fd9c
 
-![img.png](postman/postman_flow1.png)
-[Postman Flow](postman/postman_flow1.png)
+![img.png](postman/postman_flow2.png)
 
-# Lab2
+
+# Розрахунок варіанту:
+![img.png](postman/variant.png)
+Номер у списку групи: 25
+
+```
+25 % 3 = 1
+```
+
+Отже, мій варіант додаткового завдання: "Валюти"
+
+
+```
+Для валют - потрібно зробити окрему сутність, також для кожного користувача повинна бути валюта по замовчуванню(її можна встановити) а також при створенні витрати, можна вказувати валюту, проте не обов’язково(якщо не вказали то буде використана валюта по замовчуванню).
+```
+
+# Lab3
 
 ## Setup
 Для запуску у себе на пк 
 
 Потрібно клонувати проект в свою робочу директорію:
 ```
-> git clone https://github.com/Napchik/BackLabs/tree/Lab2
+> git clone https://github.com/Napchik/BackLabs/tree/Lab3
 ```
-Встановити flask допомогою команди:
+Встановити flask та requirements за допомогою команд:
 ```
 > pip install flask
+> pip install -r requirements.txt
 ```
 Тут є .flaskenv файл, тому потрібно поставити python-dotenv:
 ```
 > pip install python-dotenv
 ```
 
-## Flask
-Запуск лабораторної роботи через flask:
-```
-> flask --app src/views run -h 0.0.0.0 -p 5000
-```
-Перевірка get-ендпоинтів healthcheck:
-```
-Your domen/healthcheck
-Your domen/users
-Your domen/categories
-Example: http://127.0.0.1:5000/users
-```
-
 ## Docker
 Далі потрібно збілдити image такою командою:
 ```
 >  docker build . --tag <image-name>:latest
-Example: docker build . --tag lab2:latest
+Example: docker build . --tag lab3:latest
 ```
 Якщо image упішно збілдився, то його можна запустити і перевірити:
 ```
 > docker run -d -p 5000:5000 <image-name>
-Example: docker run -d -p 5000:5000 lab2
+Example: docker run -d -p 5000:5000 lab3
 ```
 
 ## Docker-compose
@@ -72,16 +76,19 @@ Get:
 <domen>/users
 <domen>/categories
 <domen>/records (acquires user_id or category_id)
+<domen>/currencies
 
 <domen>/user/<user_id>
 <domen>/category/<category_id>
 <domen>/record/<record_id>
+<domen>/currency/<currency_id>
 ```
 Post:
 ```
 <domen>/user
 <domen>/category
 <domen>/record
+<domen>/currency
 ```
 
 Delete:
@@ -89,5 +96,6 @@ Delete:
 <domen>/user/<user_id>
 <domen>/category/<category_id>
 <domen>/record/<record_id>
+<domen>/currency/<currency_id>
 ```
 

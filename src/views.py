@@ -114,7 +114,10 @@ def create_record():
         return jsonify({'error': 'User or category not found'}), 404
 
     # Retrieve the currency_id from the associated user
-    currency_id = user.default_currency_id
+    currency_id = record_data['currency_id']
+    currency = Currency.query.get(currency_id)
+    if not currency or not currency_id:
+        currency_id = user.default_currency_id
 
     new_record = Record(
         user_id=user_id,

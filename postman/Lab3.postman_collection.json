@@ -1,0 +1,1048 @@
+{
+	"info": {
+		"_postman_id": "6f0b7c97-b41f-49f1-a09d-682b4d4f9b32",
+		"name": "Lab3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31806616"
+	},
+	"item": [
+		{
+			"name": "Get_Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/categories",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"categories"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_Categories",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{domain}}/categories",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.7 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Dec 2023 17:04:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"12\": {\n        \"name\": \"test_category\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_Currencies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/currencies",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"currencies"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_Currencies",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{domain}}/currencies",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"currencies"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.7 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Dec 2023 17:05:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "141"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"1\": {\n        \"name\": \"Default Currency\",\n        \"symbol\": \"UAH\"\n    },\n    \"12\": {\n        \"name\": \"test_currency\",\n        \"symbol\": \"USDT\"\n    },\n    \"13\": {\n        \"name\": \"test_currency\",\n        \"symbol\": \"USDT\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/users",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_Users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{domain}}/users",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.7 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Dec 2023 17:04:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"12\": {\n        \"currency\": 1,\n        \"userid\": 12,\n        \"username\": \"test_user\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_Records",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{domain}}/records?category_id={{test_category_id}}&user_id={{test_user_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"records"
+					],
+					"query": [
+						{
+							"key": "category_id",
+							"value": "{{test_category_id}}"
+						},
+						{
+							"key": "user_id",
+							"value": "{{test_user_id}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_Records",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}/records?category_id={{test_category_id}}&user_id={{test_user_id}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"records"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "{{test_category_id}}"
+								},
+								{
+									"key": "user_id",
+									"value": "{{test_user_id}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.7 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Dec 2023 17:07:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "127"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"records\": [\n        {\n            \"category_id\": 12,\n            \"created_at\": \"Thu, 21 Dec 2023 17:05:26 GMT\",\n            \"currency_id\": 1,\n            \"id\": 12,\n            \"sum\": 322,\n            \"user_id\": 12\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Create_Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test_category\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{domain}}//category",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"",
+						"category"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create_Category",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test_category\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}//category",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"",
+								"category"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.7 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Dec 2023 17:04:12 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 12,\n    \"name\": \"test_category\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create_Currency",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test_currency\",\r\n    \"symbol\": \"USDT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{domain}}//currency",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"",
+						"currency"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create_Currency",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test_currency\",\r\n    \"symbol\": \"USDT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}//currency",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"",
+								"currency"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.7 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Dec 2023 17:04:17 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 13,\n    \"name\": \"test_currency\",\n    \"symbol\": \"USDT\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create_User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"test_user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{domain}}/user",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create_User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test_user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}/user",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.7 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Dec 2023 17:04:21 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"currency\": \"UAH\",\n    \"id\": 12,\n    \"username\": \"test_user\"\n}"
+				},
+				{
+					"name": "Create_User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test_user\",\r\n    \"default_currency_id\": \"4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}/user",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 21 Dec 2023 18:02:13 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "839208ec0e202d4f-KBP"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "21ce394f-41d7-42ba"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Werkzeug/2.3.7 Python/3.10.0"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"currency\": \"USDT\",\n    \"id\": 3,\n    \"username\": \"test_user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create_Record",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":\"{{test_user_id}}\",\r\n    \"category_id\": \"{{test_category_id}}\",\r\n    \"sum\":\"322\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{domain}}/record",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"record"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create_Record",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":\"{{test_user_id}}\",\r\n    \"category_id\": \"{{test_category_id}}\",\r\n    \"sum\":\"322\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}/record",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"record"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.7 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Dec 2023 17:05:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"category_id\": 12,\n    \"currency_id\": 1,\n    \"id\": 12,\n    \"sum\": 322,\n    \"user_id\": 12\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_User_byId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/user/{{test_user_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"{{test_user_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_User_byId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{domain}}/user/{{test_user_id}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user",
+								"{{test_user_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.7 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Dec 2023 17:05:37 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"currency\": 1,\n    \"id\": 12,\n    \"username\": \"test_user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_Currency_byId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/currency/{{test_currency_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"currency",
+						"{{test_currency_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_Currency_byId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{domain}}/currency/{{test_currency_id}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"currency",
+								"{{test_currency_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.7 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Dec 2023 17:05:41 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Default Currency\",\n    \"symbol\": \"UAH\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_Category_byId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/category/{{test_category_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"category",
+						"{{test_category_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_Category_byId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{domain}}/category/{{test_category_id}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"category",
+								"{{test_category_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.7 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Dec 2023 17:05:44 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"category_id\": \"12\",\n    \"category_name\": \"test_category\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_Record_byId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/record/{{test_record_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"record",
+						"{{test_record_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get_Record_byId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{domain}}/record/{{test_record_id}}",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"record",
+								"{{test_record_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.7 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Dec 2023 17:07:44 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "113"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"category_id\": 12,\n    \"created_at\": \"Thu, 21 Dec 2023 17:05:26 GMT\",\n    \"currency_id\": 1,\n    \"id\": 12,\n    \"sum\": 322,\n    \"user_id\": 12\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete_User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/user/{{test_user_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"{{test_user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Currency",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/currency/{{test_currency_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"currency",
+						"{{test_currency_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Record",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/record/{{test_record_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"record",
+						"{{test_record_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/category/{{test_category_id}}",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"category",
+						"{{test_category_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
