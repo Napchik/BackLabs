@@ -9,7 +9,7 @@ services:
    environment:
      PORT: "5000"
      DB_USER: "postgres"
-     DB_PASSWORD: "123456"
+     DB_PASSWORD: "qowerty123"
      DB_HOST: "db:5432"
      DB_NAME: "postgres"
    ports:
@@ -17,6 +17,6 @@ services:
   db:
     image: postgres:16.1
     environment:
-      POSTGRES_PASSWORD: "123456"
+      POSTGRES_PASSWORD: "qowerty123"
     ports:
       - "5432:5432"
