@@ -7,6 +7,7 @@ class User(db.Model):
 
     id = db.Column(db.Integer(), primary_key=True)
     username = db.Column(db.String(length=30), nullable=False, unique=False)
+    password = db.Column(db.String(length=255), nullable=False)
     records = db.relationship("Record", back_populates="user", lazy="dynamic")
     default_currency_id = db.Column(db.Integer, db.ForeignKey("currency.id"))
     default_currency = db.relationship("Currency", foreign_keys=[default_currency_id])
