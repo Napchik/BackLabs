@@ -4,6 +4,10 @@ from datetime import datetime
 from src.schemas import UserSchema, CategorySchema, RecordSchema, CurrencySchema
 from src.models import User, Category, Record, Currency
 from src import db, app
+from flask_jwt_extended import JWTManager, jwt_required, create_access_token
+
+
+jwt = JWTManager(app)
 
 with app.app_context():
     db.create_all()
@@ -34,7 +38,6 @@ def create_user():
     if default_currency_id is None:
         default_currency = Currency.query.filter_by(name="Default Currency").first()
         if not default_currency:
-            # Валюта за замовчуванням не існує, тому створіть її
             default_currency = Currency(name="Default Currency", symbol="UAH")
             db.session.add(default_currency)
             db.session.commit()
@@ -57,6 +60,7 @@ def create_user():
 
 
 @app.get("/user/<id>")
+@jwt_required()
 def get_user(id):
     with app.app_context():
         user = User.query.get(id)
@@ -73,6 +77,7 @@ def get_user(id):
 
 
 @app.get("/users")
+@jwt_required()
 def get_users():
     with app.app_context():
         users_data = {
@@ -83,6 +88,7 @@ def get_users():
 
 
 @app.delete("/user/<id>")
+@jwt_required()
 def delete_user(id):
     with app.app_context():
         user = User.query.get(id)
@@ -97,6 +103,7 @@ def delete_user(id):
 
 # =======================RECORDS===========================
 @app.post("/record")
+@jwt_required()
 def create_record():
     data = request.get_json()
     record_schema = RecordSchema()
@@ -113,11 +120,7 @@ def create_record():
     if not user or not category:
         return jsonify({'error': 'User or category not found'}), 404
 
-    # Retrieve the currency_id from the associated user
-    currency_id = record_data['currency_id']
-    currency = Currency.query.get(currency_id)
-    if not currency or not currency_id:
-        currency_id = user.default_currency_id
+    currency_id = user.default_currency_id
 
     new_record = Record(
         user_id=user_id,
@@ -141,6 +144,7 @@ def create_record():
 
 
 @app.get("/recorduser")
+@jwt_required()
 def get_record_user():
     user_id = request.args.get('user_id')
     category_id = request.args.get('category_id')
@@ -169,6 +173,7 @@ def get_record_user():
 
 
 @app.get("/record/<id>")
+@jwt_required()
 def get_record(id):
     with app.app_context():
         record = Record.query.get(id)
@@ -188,6 +193,7 @@ def get_record(id):
 
 
 @app.get("/records")
+@jwt_required()
 def get_records():
     with app.app_context():
         records_data = {
@@ -206,6 +212,7 @@ def get_records():
 
 
 @app.delete("/record/<id>")
+@jwt_required()
 def delete_record(id):
     with app.app_context():
         record = Record.query.get(id)
@@ -219,6 +226,7 @@ def delete_record(id):
 
 # =======================CATEGORY===========================
 @app.post("/category")
+@jwt_required()
 def create_category():
     data = request.get_json()
     cat_schema = CategorySchema()
@@ -241,6 +249,7 @@ def create_category():
 
 
 @app.get("/categories")
+@jwt_required()
 def get_categories():
     with app.app_context():
         categories_data = {
@@ -250,6 +259,7 @@ def get_categories():
 
 
 @app.get("/category/<id>")
+@jwt_required()
 def get_category(id):
     with app.app_context():
         category = Category.query.get(id)
@@ -265,6 +275,7 @@ def get_category(id):
 
 
 @app.delete("/category/<id>")
+@jwt_required()
 def delete_category(id):
     with app.app_context():
         category = Category.query.get(id)
@@ -280,6 +291,7 @@ def delete_category(id):
 # =======================CURRENCY===========================
 
 @app.post("/currency")
+@jwt_required()
 def create_currency():
     data = request.get_json()
     currency_schema = CurrencySchema()
@@ -302,6 +314,7 @@ def create_currency():
 
 
 @app.get("/currencies")
+@jwt_required()
 def get_currencies():
     with app.app_context():
         currencies_data = {
@@ -312,6 +325,7 @@ def get_currencies():
 
 
 @app.get("/currency/<id>")
+@jwt_required()
 def get_currency(id):
     with app.app_context():
         currency = Currency.query.filter_by(id=id).first()
@@ -327,6 +341,7 @@ def get_currency(id):
 
 
 @app.delete("/currency/<id>")
+@jwt_required()
 def delete_currency(id):
     with app.app_context():
         currency = Currency.query.filter_by(id=id).first()
@@ -336,3 +351,34 @@ def delete_currency(id):
             return jsonify({'message': f'Currency {id} deleted'}), 200
         else:
             return jsonify({'error': f'Currency {id} not found'}), 404
+
+
+@jwt.expired_token_loader
+def expired_token_callback(jwt_header, jwt_payload):
+    return (
+        jsonify({"message": "The token has expired.", "error": "token_expired"}),
+        401,
+    )
+
+
+@jwt.invalid_token_loader
+def invalid_token_callback(error):
+    return (
+        jsonify(
+            {"message": "Signature verification failed.", "error": "invalid_token"}
+        ),
+        401,
+    )
+
+
+@jwt.unauthorized_loader
+def missing_token_callback(error):
+    return (
+        jsonify(
+            {
+                "description": "Request does not contain an access token.",
+                "error": "authorization_required",
+            }
+        ),
+        401,
+    )
