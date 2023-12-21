@@ -5,7 +5,7 @@ from src.schemas import UserSchema, CategorySchema, RecordSchema, CurrencySchema
 from src.models import User, Category, Record, Currency
 from src import db, app
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token
-
+from passlib.hash import pbkdf2_sha256
 
 jwt = JWTManager(app)
 
@@ -23,7 +23,7 @@ def healthcheck():
 
 # =======================USERS===========================
 @app.post("/user")
-def create_user():
+def registrate_user():
     data = request.get_json()
 
     user_schema = UserSchema()
@@ -45,7 +45,8 @@ def create_user():
 
     new_user = User(
         username=user_data["username"],
-        default_currency_id=default_currency.id
+        default_currency_id=default_currency.id,
+        password=pbkdf2_sha256.hash(user_data["password"])
     )
     with app.app_context():
         db.session.add(new_user)
