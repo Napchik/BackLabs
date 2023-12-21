@@ -8,10 +8,15 @@ services:
      dockerfile: Dockerfile
    environment:
      PORT: "5000"
+     DB_USER: "postgres"
+     DB_PASSWORD: "123456"
+     DB_HOST: "db:5432"
+     DB_NAME: "postgres"
    ports:
      - "5000:5000"
   db:
     image: postgres:16.1
     environment:
-      POSTGRES_PASSWORD: qowerty123
-      POSTFRES_DB: Lab3
+      POSTGRES_PASSWORD: "123456"
+    ports:
+      - "5432:5432"
