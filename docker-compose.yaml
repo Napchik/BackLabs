@@ -12,6 +12,7 @@ services:
      DB_PASSWORD: "qowerty123"
      DB_HOST: "db:5432"
      DB_NAME: "postgres"
+     JWT_SECRET_KEY: "198624179883716839109981808795773338970"
    ports:
      - "5000:5000"
   db:
