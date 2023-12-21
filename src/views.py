@@ -34,7 +34,6 @@ def create_user():
     if default_currency_id is None:
         default_currency = Currency.query.filter_by(name="Default Currency").first()
         if not default_currency:
-            # Валюта за замовчуванням не існує, тому створіть її
             default_currency = Currency(name="Default Currency", symbol="UAH")
             db.session.add(default_currency)
             db.session.commit()
@@ -113,11 +112,7 @@ def create_record():
     if not user or not category:
         return jsonify({'error': 'User or category not found'}), 404
 
-    # Retrieve the currency_id from the associated user
-    currency_id = record_data['currency_id']
-    currency = Currency.query.get(currency_id)
-    if not currency or not currency_id:
-        currency_id = user.default_currency_id
+    currency_id = user.default_currency_id
 
     new_record = Record(
         user_id=user_id,
