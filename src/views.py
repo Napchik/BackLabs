@@ -60,6 +60,24 @@ def registrate_user():
         return jsonify(user_response), 200
 
 
+@app.post("/user/login/")
+def login_user():
+    credentials = request.get_json()
+    id, password = credentials["id"], credentials["password"]
+    user = User.query.get(id)
+    if not user: return {"message": f"User with this id does not exist: <{id}>"}, 404
+
+    if not pbkdf2_sha256.verify(password, user.password):
+        return {"message": "Invalid username or password"}, 401
+
+    access_token = create_access_token(identity=user.id)
+
+    return {
+        "access_token": access_token,
+        "message": "Authentication successful"
+    }
+
+
 @app.get("/user/<id>")
 @jwt_required()
 def get_user(id):
