@@ -2,17 +2,18 @@
 Repository for Backend Labs
 
 # Render
-https://backlabs-lab3.onrender.com/healthcheck
+https://backlabs-lab4.onrender.com/healthcheck
 
 # Postman Collection
-https://api.postman.com/collections/31806616-6f0b7c97-b41f-49f1-a09d-682b4d4f9b32?access_key=PMAT-01HJ6R2G972AHJQVAJV814TC27
+https://api.postman.com/collections/31806616-a2cf8fe6-f4b0-4406-97de-ffd86c3dad31?access_key=PMAT-01HJ79A23PHX5JY16V1BP2RE78
 
-Don't forget to aply environment (Production)
+Don't forget to aply environment (Production3)
 
 # Postman Flow picture
-link: https://web.postman.co/workspace/My-Workspace~1cef47a4-2011-4e56-8164-029b7387fa4d/flow/65845102aa1689003d07fd9c
+link: https://web.postman.co/workspace/1cef47a4-2011-4e56-8164-029b7387fa4d/flow/6584a875ed23e10032f12dbb
 
-![img.png](postman/postman_flow2.png)
+![img.png](postman/postman_flow3.png)
+![img.png](postman/postman_flow3.1.png)
 
 
 # Розрахунок варіанту:
@@ -30,14 +31,14 @@ link: https://web.postman.co/workspace/My-Workspace~1cef47a4-2011-4e56-8164-029b
 Для валют - потрібно зробити окрему сутність, також для кожного користувача повинна бути валюта по замовчуванню(її можна встановити) а також при створенні витрати, можна вказувати валюту, проте не обов’язково(якщо не вказали то буде використана валюта по замовчуванню).
 ```
 
-# Lab3
+# Lab4
 
 ## Setup
 Для запуску у себе на пк 
 
 Потрібно клонувати проект в свою робочу директорію:
 ```
-> git clone https://github.com/Napchik/BackLabs/tree/Lab3
+> git clone https://github.com/Napchik/BackLabs/tree/Lab4
 ```
 Встановити flask та requirements за допомогою команд:
 ```
@@ -53,12 +54,12 @@ link: https://web.postman.co/workspace/My-Workspace~1cef47a4-2011-4e56-8164-029b
 Далі потрібно збілдити image такою командою:
 ```
 >  docker build . --tag <image-name>:latest
-Example: docker build . --tag lab3:latest
+Example: docker build . --tag lab4:latest
 ```
 Якщо image упішно збілдився, то його можна запустити і перевірити:
 ```
 > docker run -d -p 5000:5000 <image-name>
-Example: docker run -d -p 5000:5000 lab3
+Example: docker run -d -p 5000:5000 lab4
 ```
 
 ## Docker-compose
@@ -89,6 +90,7 @@ Post:
 <domen>/category
 <domen>/record
 <domen>/currency
+<domen>/login
 ```
 
 Delete:
