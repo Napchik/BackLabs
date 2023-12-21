@@ -107,16 +107,18 @@ def create_record():
 
     user_id = record_data['user_id']
     user = User.query.get(user_id)
+    category_id = record_data['category_id']
+    category = Category.query.get(category_id)
 
-    if not user:
-        return jsonify({'error': 'User not found'}), 404
+    if not user or not category:
+        return jsonify({'error': 'User or category not found'}), 404
 
     # Retrieve the currency_id from the associated user
     currency_id = user.default_currency_id
 
     new_record = Record(
         user_id=user_id,
-        category_id=record_data['category_id'],
+        category_id=category_id,
         sum=record_data['sum'],
         currency_id=currency_id
     )
@@ -190,7 +192,7 @@ def get_records():
                 {
                     "id": record.id,
                     "user_id": record.user_id,
-                    "cat_id": record.category_id,
+                    "category_id": record.category_id,
                     "sum": record.sum,
                     "currency_id": record.currency_id,
                     "created_at": record.created_at
@@ -204,9 +206,12 @@ def get_records():
 def delete_record(id):
     with app.app_context():
         record = Record.query.get(id)
-        db.session.delete(record)
-        db.session.commit()
-        return jsonify({'message': f'Record {id} deleted'}), 200
+        if record:
+            db.session.delete(record)
+            db.session.commit()
+            return jsonify({'message': f'Record {id} deleted'}), 200
+        else:
+            return jsonify({'error': f'Record with id = {id} does not exist'}), 404
 
 
 # =======================CATEGORY===========================
@@ -239,6 +244,7 @@ def get_categories():
             category.id: {"name": category.name} for category in Category.query.all()
         }
         return jsonify(categories_data)
+
 
 @app.get("/category/<id>")
 def get_category(id):
