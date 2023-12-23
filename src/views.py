@@ -4,7 +4,7 @@ from datetime import datetime
 from src.schemas import UserSchema, CategorySchema, RecordSchema, CurrencySchema
 from src.models import User, Category, Record, Currency
 from src import db, app
-from flask_jwt_extended import JWTManager, jwt_required, create_access_token
+from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity, verify_jwt_in_request
 from passlib.hash import pbkdf2_sha256
 
 jwt = JWTManager(app)
@@ -106,18 +106,17 @@ def get_users():
         return jsonify(users_data)
 
 
-@app.delete("/user/<id>")
+@app.delete("/user")
 @jwt_required()
-def delete_user(id):
+def delete_user():
+    current_user_auth = get_jwt_identity()
     with app.app_context():
-        user = User.query.get(id)
-
-        if not user:
-            return jsonify({'error': f'User with that {id} dosnt exist'}), 404
-
-        db.session.delete(user)
+        current_user = User.query.get(current_user_auth)
+        if not current_user:
+            return jsonify({'error': f'User with that authorization token does not exist'}), 404
+        db.session.delete(current_user)
         db.session.commit()
-        return jsonify({'message': f'User {id} deleted'}), 200
+        return jsonify({'message': f'User {current_user_auth} deleted'}), 200
 
 
 # =======================RECORDS===========================
