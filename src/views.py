@@ -232,14 +232,15 @@ def get_records():
 @app.delete("/record/<id>")
 @jwt_required()
 def delete_record(id):
+    user_id = get_jwt_identity()
     with app.app_context():
         record = Record.query.get(id)
-        if record:
+        if record and record.user_id == user_id:
             db.session.delete(record)
             db.session.commit()
             return jsonify({'message': f'Record {id} deleted'}), 200
         else:
-            return jsonify({'error': f'Record with id = {id} does not exist'}), 404
+            return jsonify({'error': f'Record with id = {id} does not exist. Or you are not record owner'}), 404
 
 
 # =======================CATEGORY===========================
